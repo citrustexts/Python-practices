@@ -1,0 +1,31 @@
+films = {
+  "Finding Dory":[3,5],
+  "Bourne":[18,5], 
+  "Tarzan":[15,5],
+  "Ghost Busters":[12,5]
+}
+
+while True:
+  entry = int(input("Welcome to Totoro Cinema. What can I help you with today? Your choices are: 1. Find a film, 2. Buy a ticket, 3. Cancel a reservation: ").strip())
+  if entry == 1:
+    print(films.keys())
+  elif entry == 2:
+    choice = input("What film would you like to watch?: ").strip().title()
+    if choice in films:
+      age  = int(input("How old are you?: ").strip())
+      if age >= films[choice][0]:
+        if films[choice][1] > 0:
+          print("Thanks for the purchase. Enjoy the film!")
+          films[choice][1] = films[choice][1]-1
+        else:
+          print("Sorry, we're sold out...")
+      else:
+        print("You're too young to watch.")
+    else:
+      print("We don't have that film... Sorry")
+  elif entry == 3:
+    cancel = input("What movie ticket do you want to cancel?: ").strip().title()
+    films[cancel][1] = films[cancel][1]+1
+    print("Your ticket has been cancelled. There are now "+str(films[cancel][1])+" tickets left.")
+  else:
+    print("Error, please type a number from 1 to 3.")
