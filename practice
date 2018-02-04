@@ -28,4 +28,4 @@ while True:
     films[cancel][1] = films[cancel][1]+1
     print("Your ticket has been cancelled. There are now "+str(films[cancel][1])+" tickets left.")
   else:
-    print("Error, please type a number from 1 to 3.")
+    print("Error, please type a number from 1 to suckadick.")
